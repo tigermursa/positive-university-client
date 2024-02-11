@@ -1,4 +1,4 @@
-import { Layout, Menu } from "antd";
+import { Layout, Menu, MenuProps } from "antd";
 
 const { Header, Content, Footer, Sider } = Layout;
 import {
@@ -7,20 +7,55 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { createElement } from "react";
-const items = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  UserOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: createElement(icon),
-  label: `nav ${index + 1}`,
-}));
+
+const items: MenuProps["items"] = [
+  {
+    key: "001",
+    label: "Dashboard-",
+  },
+  {
+    key: "002",
+    label: "Users",
+  },
+  {
+    key: "003",
+    label: "Admins",
+    children: [
+      {
+        key: "004",
+        label: "Dashboards",
+      },
+      {
+        key: "005",
+        label: "Users",
+        children: [
+          {
+            key: "006",
+            label: "Dashboards",
+          },
+          {
+            key: "007",
+            label: "Users",
+            children: [
+              {
+                key: "008",
+                label: "Dashboards",
+              },
+              {
+                key: "009",
+                label: "Users",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
 
 const MainLayout = () => {
   return (
-    <Layout>
+    <Layout style={{ height: "100vh" }}>
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
@@ -31,7 +66,10 @@ const MainLayout = () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical" />
+        <div style={{color:"white", padding:"5px", border:"2px solid red",height:"4rem",display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <h1>Positive University</h1>
+        </div>
+
         <Menu
           theme="dark"
           mode="inline"
@@ -44,7 +82,7 @@ const MainLayout = () => {
         <Content style={{ margin: "24px 16px 0" }}>
           <div
             style={{
-              padding: 24,
+              padding: 0,
               minHeight: 360,
             }}
           >
