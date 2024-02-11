@@ -48,7 +48,7 @@ const MainLayout = () => {
               minHeight: 360,
             }}
           >
-            content
+            My main content coming soon!
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

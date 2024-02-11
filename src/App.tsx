@@ -1,9 +1,9 @@
-
+import MainLayout from "./components/layout/MainLayout";
 
 const App = () => {
   return (
     <div>
-     <h1>POSITIVE UNIVERSITY </h1>
+      <MainLayout />
     </div>
   );
 };
