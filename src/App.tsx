@@ -3,7 +3,7 @@
 const App = () => {
   return (
     <div>
-     <h1>POSITIVE UNIVERSITY</h1>
+     <h1>POSITIVE UNIVERSITY </h1>
     </div>
   );
 };
