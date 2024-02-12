@@ -36,6 +36,7 @@ export const adminPaths = [
   },
 ];
 
+/*
 export const adminSidebarItems = adminPaths.reduce(
   (acc: TAdminRoute[], item) => {
     // condition for the without child
@@ -57,13 +58,11 @@ export const adminSidebarItems = adminPaths.reduce(
         })),
       });
     }
-
     return acc;
   },
   []
 );
 
-/*
 // Dynamic way with the power of js function
 export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
   // condition for the without child
@@ -85,9 +84,6 @@ export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
 
   return acc;
 }, []);  */
-
-
-
 
 //********
 //hard coded routes
