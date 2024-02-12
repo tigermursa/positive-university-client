@@ -20,36 +20,6 @@ const items: MenuProps["items"] = [
   {
     key: "003",
     label: "Admins",
-    children: [
-      {
-        key: "004",
-        label: "Dashboards",
-      },
-      {
-        key: "005",
-        label: "Users",
-        children: [
-          {
-            key: "006",
-            label: "Dashboards",
-          },
-          {
-            key: "007",
-            label: "Users",
-            children: [
-              {
-                key: "008",
-                label: "Dashboards",
-              },
-              {
-                key: "009",
-                label: "Users",
-              },
-            ],
-          },
-        ],
-      },
-    ],
   },
 ];
 
