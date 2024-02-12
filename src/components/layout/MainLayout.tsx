@@ -1,17 +1,12 @@
 import { Layout, Menu, MenuProps } from "antd";
+import { Outlet } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
-import { createElement } from "react";
 
 const items: MenuProps["items"] = [
   {
     key: "001",
-    label: "Dashboard-",
+    label: "Dashboard",
   },
   {
     key: "002",
@@ -36,7 +31,17 @@ const MainLayout = () => {
           console.log(collapsed, type);
         }}
       >
-        <div style={{color:"white", padding:"5px", border:"2px solid red",height:"4rem",display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <div
+          style={{
+            color: "white",
+            padding: "5px",
+            border: "2px solid red",
+            height: "4rem",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <h1>Positive University</h1>
         </div>
 
@@ -56,7 +61,8 @@ const MainLayout = () => {
               minHeight: 360,
             }}
           >
-            My main content coming soon!
+            {/* all data */}
+            <Outlet />
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
