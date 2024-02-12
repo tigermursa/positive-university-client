@@ -46,16 +46,14 @@ export const adminSidebarItems = adminPaths.reduce(
     }
 
     if (item.children) {
-      item.children.forEach((child) => {
-        acc.push({
-          key: item.name,
-          label: child.element,
-          //for each return nothing map returns an array
-          children: item.children.map((child) => ({
-            key: child.name,
-            label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
-          })),
-        });
+      acc.push({
+        key: item.name,
+        label: item.name,
+        //for each return nothing map returns an array
+        children: item.children.map((child) => ({
+          key: child.name,
+          label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
+        })),
       });
     }
 
