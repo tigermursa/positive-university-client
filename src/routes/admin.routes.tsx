@@ -63,6 +63,7 @@ export const adminSidebarItems = adminPaths.reduce(
   []
 );
 
+/*
 // Dynamic way with the power of js function
 export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
   // condition for the without child
@@ -83,8 +84,12 @@ export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
   }
 
   return acc;
-}, []);
+}, []);  */
 
+
+
+
+//********
 //hard coded routes
 
 // export const adminPaths = [
