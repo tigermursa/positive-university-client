@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { TSidebarItem, TUserPath } from "../types";
 
-export const sidebarItemsGenetor = (items: TUserPath[], role) => {
+export const sidebarItemsGenetor = (items: TUserPath[], role: string) => {
   const adminSidebarItems = items.reduce((acc: TSidebarItem[], item) => {
     // condition for the without child
     if (item.path && item.name) {
