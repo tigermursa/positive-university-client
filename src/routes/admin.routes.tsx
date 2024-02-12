@@ -38,13 +38,14 @@ export const adminPaths = [
 
 export const adminSidebarItems = adminPaths.reduce(
   (acc: TAdminRoute[], item) => {
+    // condition for the without child
     if (item.path && item.name) {
       acc.push({
         key: item.name,
         label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
       });
     }
-
+    // condition for the with child
     if (item.children) {
       acc.push({
         key: item.name,
@@ -64,14 +65,14 @@ export const adminSidebarItems = adminPaths.reduce(
 
 // Dynamic way with the power of js function
 export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
-  //for the without child
+  // condition for the without child
   if (item.path && item.element) {
     acc.push({
       path: item.path,
       element: item.element,
     });
   }
-  //for the with child
+  // condition for the with child
   if (item.children) {
     item.children.forEach((child) => {
       acc.push({
