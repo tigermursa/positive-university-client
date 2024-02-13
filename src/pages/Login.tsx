@@ -8,8 +8,10 @@ import { verifyToken } from "../utils/verifyToken";
 const Login = () => {
   const dispatch = useAppDispatch();
   const { register, handleSubmit } = useForm();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [login, { error }] = useLoginMutation();
-  const onSubmit = async (data) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onSubmit = async (data: any) => {
     const userInfo = {
       id: data.id,
       password: data.password,
@@ -21,17 +23,19 @@ const Login = () => {
     console.log(user);
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="id">ID:</label>
-        <input type="text" id="id" {...register("id")}></input>
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input type="text" id="password" {...register("password")}></input>
-      </div>
-      <Button htmlType="submit">Login</Button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label htmlFor="id">ID:</label>
+          <input type="text" id="id" {...register("id")}></input>
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input type="text" id="password" {...register("password")}></input>
+        </div>
+        <Button htmlType="submit">Login</Button>
+      </form>
+    </div>
   );
 };
 
