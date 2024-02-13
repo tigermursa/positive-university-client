@@ -23,8 +23,8 @@ const Login = () => {
     console.log(user);
   };
   return (
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh"}}>
-      <form onSubmit={handleSubmit(onSubmit)} style={{border:"2px solid red"}}>
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"80vh"}}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="id">ID:</label>
           <input type="text" id="id" {...register("id")}></input>

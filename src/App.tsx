@@ -5,9 +5,8 @@ const App = () => {
   return (
     <div>
       <ProtectedRoute>
-      <MainLayout />
+        <MainLayout />
       </ProtectedRoute>
-      
     </div>
   );
 };
