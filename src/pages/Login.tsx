@@ -23,7 +23,7 @@ const Login = () => {
     console.log(user);
   };
   return (
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"900vh"}}>
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"90vh"}}>
       <form onSubmit={handleSubmit(onSubmit)} style={{border:"2px solid red"}}>
         <div>
           <label htmlFor="id">ID:</label>
