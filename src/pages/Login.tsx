@@ -17,6 +17,8 @@ const Login = () => {
     const res = await login(userInfo).unwrap(); //to get easily
     const user = verifyToken(res.data.accessToken);
     dispatch(setUser({ user: user, token: res.data.accessToken }));
+    console.log(res);
+    console.log(user);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
