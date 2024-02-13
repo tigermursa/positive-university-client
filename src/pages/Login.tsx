@@ -24,7 +24,7 @@ const Login = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} style={{border:"2px solid red"}}>
         <div>
           <label htmlFor="id">ID:</label>
           <input type="text" id="id" {...register("id")}></input>
