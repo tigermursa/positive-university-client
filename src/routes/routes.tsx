@@ -7,6 +7,7 @@ import { adminPaths } from "./admin.routes";
 import { facultyPaths } from "./faculty.routes";
 import { studentPaths } from "./student.routes";
 import Login from "../pages/Login";
+import NotFound from "../pages/404";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login />,
+  },
+  {
+    path: "/*",
+    element: <NotFound />,
   },
 ]);
 
