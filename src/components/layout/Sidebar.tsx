@@ -12,7 +12,7 @@ const userRole = {
 };
 
 const Sidebar = () => {
-  const role = "admin";
+  const role = "student";
   let sidebarItems;
 
   switch (role) {
