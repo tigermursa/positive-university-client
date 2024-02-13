@@ -1,1 +1,1 @@
-clean readme for now
+now redux rtk query working going on
