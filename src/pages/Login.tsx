@@ -5,6 +5,7 @@ import { useAppDispatch } from "../redux/hooks";
 import { setUser } from "../redux/features/auth/authSlice";
 import { verifyToken } from "../utils/verifyToken";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,16 +16,23 @@ const Login = () => {
   const [login, { error }] = useLoginMutation();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (data: any) => {
-    const userInfo = {
-      id: data.id,
-      password: data.password,
-    };
-    const res = await login(userInfo).unwrap(); //to get easily
-    const user = verifyToken(res.data.accessToken);
-    dispatch(setUser({ user: user, token: res.data.accessToken }));
-    console.log(res);
-    console.log(user);
-    navigate("/");
+    const toastId = toast.loading("Logging in");
+
+    try {
+      const userInfo = {
+        id: data.id,
+        password: data.password,
+      };
+      const res = await login(userInfo).unwrap(); //to get easily
+      const user = verifyToken(res.data.accessToken);
+      dispatch(setUser({ user: user, token: res.data.accessToken }));
+      console.log(res);
+      console.log(user);
+      toast.success("Logged in", { id: toastId, duration: 2000 }); // to avoid the double toast
+      navigate(`/${user.role}/dashboard`);
+    } catch (error) {
+      toast.error("Something went wrong", { id: toastId, duration: 2000 });
+    }
   };
   return (
     <div
