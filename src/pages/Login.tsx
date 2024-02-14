@@ -4,8 +4,11 @@ import { useLoginMutation } from "../redux/features/auth/authApi";
 import { useAppDispatch } from "../redux/hooks";
 import { setUser } from "../redux/features/auth/authSlice";
 import { verifyToken } from "../utils/verifyToken";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
   const { register, handleSubmit } = useForm();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -21,9 +24,17 @@ const Login = () => {
     dispatch(setUser({ user: user, token: res.data.accessToken }));
     console.log(res);
     console.log(user);
+    navigate("/");
   };
   return (
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"80vh"}}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "80vh",
+      }}
+    >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="id">ID:</label>
